@@ -57,20 +57,21 @@ This repository contains the code and resources for our research on detecting fa
    * Diverse across regions, industries, career stages, and organization types
  
 
-Model | Train Scenario | Test Baseline | Test GPTv1 | Test GPTv2 | Test GPTv1v2
-roberta | baseline | 95.86% | 78.51% | 79.29% | 69.89%
-roberta | gptv1_assisted | 96.14% | 97.41% | 90.12% | 93.03%
-roberta | gptv2_assisted | 96.13% | 80.13% | 96.97% | 83.77%
-roberta | gptv1v2_assisted | 96.12% | 97.41% | 96.86% | 97.74%
-deberta | baseline | 97.07% | 78.46% | 77.46% | 67.88%
-deberta | gptv1_assisted | 96.52% | 97.69% | 90.54% | 93.34%
-deberta | gptv2_assisted | 96.38% | 79.02% | 96.97% | 82.80%
-deberta | gptv1v2_assisted | 96.80% | 97.78% | 97.18% | 97.90%
-modernbert | baseline | 95.71% | 77.98% | 81.64% | 71.19%
-modernbert | gptv1_assisted | 95.99% | 97.31% | 89.55% | 92.64%
-modernbert | gptv2_assisted | 96.26% | 79.08% | 97.08% | 82.97%
-modernbert | gptv1v2_assisted | 96.56% | 97.69% | 97.30% | 98.05%
-flair | baseline | 96.39% | 78.95% | 84.73% | 73.82%
-flair | gptv1_assisted | 96.81% | 97.87% | 88.94% | 92.26%
-flair | gptv2_assisted | 96.80% | 79.44% | 97.51% | 83.28%
-flair | gptv1v2_assisted | 96.94% | 97.96% | 97.62% | 98.29%
+|    Model   |  Train Scenario  | Test Baseline | Test GPTv1 | Test GPTv2 | Test GPTv1v2 |
+|:----------:|:----------------:|:-------------:|:----------:|:----------:|:------------:|
+| roberta    | baseline         | 95.86%        | 78.51%     | 79.29%     | 69.89%       |
+| roberta    | gptv1_assisted   | 96.14%        | 97.41%     | 90.12%     | 93.03%       |
+| roberta    | gptv2_assisted   | 96.13%        | 80.13%     | 96.97%     | 83.77%       |
+| roberta    | gptv1v2_assisted | 96.12%        | 97.41%     | 96.86%     | 97.74%       |
+| deberta    | baseline         | 97.07%        | 78.46%     | 77.46%     | 67.88%       |
+| deberta    | gptv1_assisted   | 96.52%        | 97.69%     | 90.54%     | 93.34%       |
+| deberta    | gptv2_assisted   | 96.38%        | 79.02%     | 96.97%     | 82.80%       |
+| deberta    | gptv1v2_assisted | 96.80%        | 97.78%     | 97.18%     | 97.90%       |
+| modernbert | baseline         | 95.71%        | 77.98%     | 81.64%     | 71.19%       |
+| modernbert | gptv1_assisted   | 95.99%        | 97.31%     | 89.55%     | 92.64%       |
+| modernbert | gptv2_assisted   | 96.26%        | 79.08%     | 97.08%     | 82.97%       |
+| modernbert | gptv1v2_assisted | 96.56%        | 97.69%     | 97.30%     | 98.05%       |
+| flair      | baseline         | 96.39%        | 78.95%     | 84.73%     | 73.82%       |
+| flair      | gptv1_assisted   | 96.81%        | 97.87%     | 88.94%     | 92.26%       |
+| flair      | gptv2_assisted   | 96.80%        | 79.44%     | 97.51%     | 83.28%       |
+| flair      | gptv1v2_assisted | 96.94%        | 97.96%     | 97.62%     | 98.29%       |
