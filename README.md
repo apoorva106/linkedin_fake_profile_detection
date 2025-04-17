@@ -56,22 +56,179 @@ This repository contains the code and resources for our research on detecting fa
    * Created using few-shot prompting with GPT-4
    * Diverse across regions, industries, career stages, and organization types
  
+ ## Additional results
 
-|    Model   |  Train Scenario  | Test Baseline | Test GPTv1 | Test GPTv2 | Test GPTv1v2 |
-|:----------:|:----------------:|:-------------:|:----------:|:----------:|:------------:|
-| roberta    | baseline         | 95.86%        | 78.51%     | 79.29%     | 69.89%       |
-| roberta    | gptv1_assisted   | 96.14%        | 97.41%     | 90.12%     | 93.03%       |
-| roberta    | gptv2_assisted   | 96.13%        | 80.13%     | 96.97%     | 83.77%       |
-| roberta    | gptv1v2_assisted | 96.12%        | 97.41%     | 96.86%     | 97.74%       |
-| deberta    | baseline         | 97.07%        | 78.46%     | 77.46%     | 67.88%       |
-| deberta    | gptv1_assisted   | 96.52%        | 97.69%     | 90.54%     | 93.34%       |
-| deberta    | gptv2_assisted   | 96.38%        | 79.02%     | 96.97%     | 82.80%       |
-| deberta    | gptv1v2_assisted | 96.80%        | 97.78%     | 97.18%     | 97.90%       |
-| modernbert | baseline         | 95.71%        | 77.98%     | 81.64%     | 71.19%       |
-| modernbert | gptv1_assisted   | 95.99%        | 97.31%     | 89.55%     | 92.64%       |
-| modernbert | gptv2_assisted   | 96.26%        | 79.08%     | 97.08%     | 82.97%       |
-| modernbert | gptv1v2_assisted | 96.56%        | 97.69%     | 97.30%     | 98.05%       |
-| flair      | baseline         | 96.39%        | 78.95%     | 84.73%     | 73.82%       |
-| flair      | gptv1_assisted   | 96.81%        | 97.87%     | 88.94%     | 92.26%       |
-| flair      | gptv2_assisted   | 96.80%        | 79.44%     | 97.51%     | 83.28%       |
-| flair      | gptv1v2_assisted | 96.94%        | 97.96%     | 97.62%     | 98.29%       |
+ ### 167 dimensional STE + numerical embeddings
+
+ 
+|     CB     |                  |    F1 SCORE   |            |            |              |   |      XGB      | F1 SCORE   |            |              |
+|:----------:|------------------|:-------------:|------------|------------|--------------|---|:-------------:|------------|------------|--------------|
+|    model   |  train_scenario  | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |   | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |
+|   roberta  |     baseline     |     95.86%    |   78.51%   |   79.29%   |    69.89%    |   |     96.68%    |   78.36%   |   78.45%   |    68.67%    |
+|   roberta  |  gptv1_assisted  |     96.14%    |   97.41%   |   90.12%   |    93.03%    |   |     96.69%    |   97.78%   |   93.36%   |    95.26%    |
+|   roberta  |  gptv2_assisted  |     96.13%    |   80.13%   |   96.97%   |    83.77%    |   |     95.59%    |   80.46%   |   96.43%   |    83.94%    |
+|   roberta  | gptv1v2_assisted |     96.12%    |   97.41%   |   96.86%   |    97.74%    |   |     96.29%    |   97.50%   |   97.08%   |    97.89%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|   deberta  |     baseline     |     97.07%    |   78.46%   |   77.46%   |    67.88%    |   |     96.94%    |   77.87%   |   78.83%   |    68.38%    |
+|   deberta  |  gptv1_assisted  |     96.52%    |   97.69%   |   90.54%   |    93.34%    |   |     96.94%    |   97.96%   |   91.66%   |    94.11%    |
+|   deberta  |  gptv2_assisted  |     96.38%    |   79.02%   |   96.97%   |    82.80%    |   |     96.93%    |   79.41%   |   97.62%   |    83.27%    |
+|   deberta  | gptv1v2_assisted |     96.80%    |   97.78%   |   97.18%   |    97.90%    |   |     96.67%    |   97.78%   |   97.29%   |    98.05%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+| modernbert |     baseline     |     95.71%    |   77.98%   |   81.64%   |    71.19%    |   |     96.95%    |   78.63%   |   82.04%   |    71.29%    |
+| modernbert |  gptv1_assisted  |     95.99%    |   97.31%   |   89.55%   |    92.64%    |   |     97.23%    |   98.15%   |   90.53%   |    93.34%    |
+| modernbert |  gptv2_assisted  |     96.26%    |   79.08%   |   97.08%   |    82.97%    |   |     96.68%    |   79.27%   |   97.30%   |    83.05%    |
+| modernbert | gptv1v2_assisted |     96.56%    |   97.69%   |   97.30%   |    98.05%    |   |     96.96%    |   97.96%   |   97.51%   |    98.21%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|    flair   |     baseline     |     96.39%    |   78.95%   |   84.73%   |    73.82%    |   |     97.08%    |   79.11%   |   82.37%   |    71.87%    |
+|    flair   |  gptv1_assisted  |     96.81%    |   97.87%   |   88.94%   |    92.26%    |   |     97.24%    |   98.15%   |   89.75%   |    92.80%    |
+|    flair   |  gptv2_assisted  |     96.80%    |   79.44%   |   97.51%   |    83.28%    |   |     97.23%    |   80.27%   |   97.84%   |    83.92%    |
+|    flair   | gptv1v2_assisted |     96.94%    |   97.96%   |   97.62%   |    98.29%    |   |     96.81%    |   97.87%   |   97.51%   |    98.21%    |
+
+
+|     CB     |                  |    FAR        |            |            |              |   |      XGB      | FAR        |            |              |
+|:----------:|------------------|:-------------:|------------|------------|--------------|---|:-------------:|------------|------------|--------------|
+|    model   |  train_scenario  | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |   | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |
+|   roberta  |     baseline     |     6.67%     |   38.33%   |   42.45%   |    48.12%    |   |     5.00%     |   39.07%   |   44.79%   |    50.27%    |
+|   roberta  |  gptv1_assisted  |     5.56%     |    1.85%   |   18.75%   |     9.68%    |   |     4.44%     |    1.48%   |   11.72%   |     6.05%    |
+|   roberta  |  gptv2_assisted  |     6.11%     |   35.56%   |    2.86%   |    25.81%    |   |     6.67%     |   34.44%   |    3.39%   |    25.13%    |
+|   roberta  | gptv1v2_assisted |     7.22%     |    2.41%   |    3.65%   |     1.88%    |   |     4.44%     |    1.48%   |    2.08%   |     1.08%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|   deberta  |     baseline     |     7.22%     |   40.00%   |   48.18%   |    52.15%    |   |     6.67%     |   40.74%   |   45.05%   |    51.21%    |
+|   deberta  |  gptv1_assisted  |     7.22%     |    2.41%   |   19.27%   |     9.95%    |   |     6.11%     |    2.04%   |   16.93%   |     8.74%    |
+|   deberta  |  gptv2_assisted  |     8.33%     |   38.52%   |    4.43%   |    28.23%    |   |     7.22%     |   38.15%   |    3.39%   |    27.69%    |
+|   deberta  | gptv1v2_assisted |     7.22%     |    2.59%   |    4.17%   |     2.28%    |   |     6.11%     |    2.04%   |    3.12%   |     1.61%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+| modernbert |     baseline     |     7.78%     |   39.44%   |   37.76%   |    46.24%    |   |     5.56%     |   39.07%   |   38.02%   |    46.64%    |
+| modernbert |  gptv1_assisted  |     6.67%     |    2.22%   |   20.31%   |    10.48%    |   |     5.00%     |    1.67%   |   19.53%   |    10.08%    |
+| modernbert |  gptv2_assisted  |     6.67%     |   37.78%   |    3.12%   |    27.42%    |   |     5.56%     |   37.59%   |    2.86%   |    27.42%    |
+| modernbert | gptv1v2_assisted |     4.44%     |    1.48%   |    2.08%   |     1.08%    |   |     4.44%     |    1.48%   |    2.34%   |     1.21%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|    flair   |     baseline     |     7.22%     |   38.33%   |   32.03%   |    42.61%    |   |     6.11%     |   38.52%   |   37.76%   |    45.97%    |
+|    flair   |  gptv1_assisted  |     6.11%     |    2.04%   |   22.92%   |    11.83%    |   |     3.89%     |    1.30%   |   20.83%   |    10.75%    |
+|    flair   |  gptv2_assisted  |     6.67%     |   37.78%   |    3.12%   |    27.42%    |   |     4.44%     |   36.11%   |    2.08%   |    26.21%    |
+|    flair   | gptv1v2_assisted |     6.11%     |    2.04%   |    2.86%   |     1.48%    |   |     5.56%     |    1.85%   |    2.60%   |     1.34%    |
+
+|     CB     |                  |  FRR  |   |  XGB  |
+|:----------:|------------------|:-----:|---|:-----:|
+|    model   |  train_scenario  |  test |   |  test |
+|   roberta  |     baseline     | 3.33% |   | 2.78% |
+|   roberta  |  gptv1_assisted  | 3.33% |   | 2.96% |
+|   roberta  |  gptv2_assisted  | 3.15% |   | 3.70% |
+|   roberta  | gptv1v2_assisted | 2.78% |   | 3.52% |
+|            |                  |       |   |       |
+|   deberta  |     baseline     | 1.48% |   | 1.85% |
+|   deberta  |  gptv1_assisted  | 2.22% |   | 2.04% |
+|   deberta  |  gptv2_assisted  | 2.04% |   | 1.67% |
+|   deberta  | gptv1v2_assisted | 1.85% |   | 2.41% |
+|            |                  |       |   |       |
+| modernbert |     baseline     | 3.15% |   | 2.22% |
+| modernbert |  gptv1_assisted  | 3.15% |   | 2.04% |
+| modernbert |  gptv2_assisted  | 2.78% |   | 2.59% |
+| modernbert | gptv1v2_assisted | 3.15% |   | 2.59% |
+|            |                  |       |   |       |
+|    flair   |     baseline     | 2.41% |   | 1.85% |
+|    flair   |  gptv1_assisted  | 2.22% |   | 2.41% |
+|    flair   |  gptv2_assisted  | 2.04% |   | 2.22% |
+|    flair   | gptv1v2_assisted | 2.04% |   | 2.41% |
+
+ ### 150 dimensional STE embeddings
+
+|     CB     |                  |    F1 SCORE   |            |            |              |   |      XGB      | F1 SCORE   |            |              |
+|:----------:|------------------|:-------------:|------------|------------|--------------|---|:-------------:|------------|------------|--------------|
+|    model   |  train_scenario  | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |   | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |
+|   roberta  |     baseline     |     95.19%    |   64.54%   |   76.12%   |    56.00%    |   |     95.76%    |   64.07%   |   76.72%   |    55.70%    |
+|   roberta  |  gptv1_assisted  |     95.78%    |   97.22%   |   85.03%   |    89.71%    |   |     96.65%    |   97.78%   |   89.50%   |    92.65%    |
+|   roberta  |  gptv2_assisted  |     94.39%    |   96.30%   |   95.11%   |    96.50%    |   |     95.22%    |   96.85%   |   95.87%   |    97.05%    |
+|   roberta  | gptv1v2_assisted |     94.84%    |   96.57%   |   95.34%   |    96.66%    |   |     96.23%    |   97.50%   |   96.20%   |    97.28%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|   deberta  |     baseline     |     95.19%    |   67.10%   |   75.16%   |    57.49%    |   |     96.23%    |   66.02%   |   77.28%   |    57.40%    |
+|   deberta  |  gptv1_assisted  |     95.48%    |   97.04%   |   89.36%   |    92.57%    |   |     96.08%    |   97.41%   |   90.75%   |    93.49%    |
+|   deberta  |  gptv2_assisted  |     95.20%    |   96.39%   |   96.09%   |    96.82%    |   |     96.67%    |   97.50%   |   97.29%   |    97.82%    |
+|   deberta  | gptv1v2_assisted |     95.08%    |   96.67%   |   95.98%   |    97.05%    |   |     96.50%    |   97.69%   |   97.29%   |    98.05%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+| modernbert |     baseline     |     95.54%    |   71.58%   |   81.08%   |    65.51%    |   |     96.22%    |   65.94%   |   80.72%   |    60.10%    |
+| modernbert |  gptv1_assisted  |     94.39%    |   96.30%   |   86.65%   |    90.71%    |   |     94.97%    |   96.67%   |   88.62%   |    92.03%    |
+| modernbert |  gptv2_assisted  |     93.76%    |   95.83%   |   94.04%   |    95.72%    |   |     93.41%    |   95.55%   |   93.40%   |    95.25%    |
+| modernbert | gptv1v2_assisted |     93.76%    |   95.83%   |   93.49%   |    95.33%    |   |     93.81%    |   95.83%   |   93.83%   |    95.56%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|    flair   |     baseline     |     93.68%    |   77.17%   |   81.41%   |    71.63%    |   |     95.02%    |   63.32%   |   77.26%   |    56.02%    |
+|    flair   |  gptv1_assisted  |     94.12%    |   96.20%   |   86.53%   |    90.71%    |   |     94.89%    |   96.67%   |   86.44%   |    90.64%    |
+|    flair   |  gptv2_assisted  |     94.45%    |   95.09%   |   95.65%   |    95.81%    |   |     94.90%    |   96.20%   |   95.98%   |    96.74%    |
+|    flair   | gptv1v2_assisted |     91.80%    |   94.72%   |   93.45%   |    95.34%    |   |     94.20%    |   96.20%   |   95.54%   |    96.81%    |
+
+
+|     CB     |                  |      FAR      |            |            |              |   |      XGB      |     FAR    |            |              |
+|:----------:|------------------|:-------------:|------------|------------|--------------|---|:-------------:|:----------:|------------|--------------|
+|    model   |  train_scenario  | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |   | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |
+|   roberta  |     baseline     |     14.44%    |   62.78%   |   50.78%   |    68.28%    |   |     13.33%    |   63.70%   |   50.00%   |    68.82%    |
+|   roberta  |  gptv1_assisted  |     11.67%    |    3.89%   |   32.29%   |    16.67%    |   |     7.78%     |    2.59%   |   22.14%   |    11.42%    |
+|   roberta  |  gptv2_assisted  |     13.89%    |    4.63%   |    7.81%   |     4.03%    |   |     12.78%    |    4.26%   |    7.03%   |     3.63%    |
+|   roberta  | gptv1v2_assisted |     11.67%    |    3.89%   |    7.03%   |     3.63%    |   |     8.89%     |    2.96%   |    6.25%   |     3.23%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|   deberta  |     baseline     |     14.44%    |   58.89%   |   52.60%   |    66.40%    |   |     8.89%     |   60.19%   |   47.92%   |    66.26%    |
+|   deberta  |  gptv1_assisted  |     13.33%    |    4.44%   |   22.92%   |    11.83%    |   |     10.00%    |    3.33%   |   19.27%   |     9.95%    |
+|   deberta  |  gptv2_assisted  |     13.89%    |    5.56%   |    7.03%   |     4.30%    |   |     6.11%     |    2.59%   |    3.12%   |     2.02%    |
+|   deberta  | gptv1v2_assisted |     13.33%    |    4.63%   |    6.77%   |     3.63%    |   |     8.89%     |    2.96%   |    4.17%   |     2.15%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+| modernbert |     baseline     |     10.00%    |   50.93%   |   39.58%   |    54.97%    |   |     10.00%    |   60.56%   |   41.41%   |    62.90%    |
+| modernbert |  gptv1_assisted  |     13.89%    |    4.63%   |   27.34%   |    14.11%    |   |     11.67%    |    3.89%   |   22.92%   |    11.83%    |
+| modernbert |  gptv2_assisted  |     12.22%    |    4.07%   |    8.33%   |     4.30%    |   |     9.44%     |    3.15%   |    7.81%   |     4.03%    |
+| modernbert | gptv1v2_assisted |     12.22%    |    4.07%   |    9.64%   |     4.97%    |   |     9.44%     |    3.15%   |    7.55%   |     3.90%    |
+|            |                  |               |            |            |              |   |               |            |            |              |
+|    flair   |     baseline     |     21.11%    |   42.59%   |   40.62%   |    46.77%    |   |     16.11%    |   64.81%   |   48.96%   |    68.41%    |
+|    flair   |  gptv1_assisted  |     20.00%    |    6.67%   |   29.95%   |    15.46%    |   |     16.11%    |    5.37%   |   29.69%   |    15.32%    |
+|    flair   |  gptv2_assisted  |     17.22%    |    8.33%   |    8.33%   |     6.18%    |   |     15.56%    |    6.11%   |    7.55%   |     4.57%    |
+|    flair   | gptv1v2_assisted |     25.00%    |    8.33%   |   12.50%   |     6.45%    |   |     16.67%    |    5.56%   |    7.81%   |     4.03%    |
+
+|     CB     |                  |  FRR  |   |  XGB  |
+|:----------:|------------------|:-----:|---|:-----:|
+|    model   |  train_scenario  |  test |   |  test |
+|   roberta  |     baseline     | 1.48% |   | 1.11% |
+|   roberta  |  gptv1_assisted  | 1.67% |   | 1.85% |
+|   roberta  |  gptv2_assisted  | 2.78% |   | 2.04% |
+|   roberta  | gptv1v2_assisted | 2.96% |   | 2.04% |
+|            |                  |       |   |       |
+|   deberta  |     baseline     | 1.48% |   | 2.04% |
+|   deberta  |  gptv1_assisted  | 1.48% |   | 1.85% |
+|   deberta  |  gptv2_assisted  | 1.67% |   | 2.41% |
+|   deberta  | gptv1v2_assisted | 2.04% |   | 1.67% |
+|            |                  |       |   |       |
+| modernbert |     baseline     | 2.59% |   | 1.67% |
+| modernbert |  gptv1_assisted  | 2.78% |   | 2.78% |
+| modernbert |  gptv2_assisted  | 4.26% |   | 5.74% |
+| modernbert | gptv1v2_assisted | 4.26% |   | 5.19% |
+|            |                  |       |   |       |
+|    flair   |     baseline     | 1.11% |   | 1.11% |
+|    flair   |  gptv1_assisted  | 0.93% |   | 1.30% |
+|    flair   |  gptv2_assisted  | 1.48% |   | 1.48% |
+|    flair   | gptv1v2_assisted | 2.22% |   | 2.04% |
+
+ ### 17 dimensional numerical embeddings
+
+|        CB        |    F1 SCORE   |            |            |              |   |      XGB      |  F1 SCORE  |            |              |
+|:----------------:|:-------------:|------------|------------|--------------|---|:-------------:|:----------:|------------|--------------|
+|  train_scenario  | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |   | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |
+|     baseline     |     95.56%    |   79.21%   |   78.76%   |    70.31%    |   |     95.04%    |   78.67%   |   80.63%   |    71.44%    |
+|  gptv1_assisted  |     92.16%    |   84.08%   |   87.49%   |    82.34%    |   |     89.47%    |   82.55%   |   87.82%   |    82.82%    |
+|  gptv2_assisted  |     95.84%    |   78.27%   |   96.75%   |    82.34%    |   |     95.30%    |   79.35%   |   96.32%   |    83.15%    |
+| gptv1v2_assisted |     92.17%    |   84.56%   |   93.76%   |    87.15%    |   |     89.33%    |   82.27%   |   91.40%   |    85.20%    |
+
+|        CB        |      FAR      |            |            |              |   |      XGB      |     FAR    |            |              |
+|:----------------:|:-------------:|------------|------------|--------------|---|:-------------:|:----------:|------------|--------------|
+|  train_scenario  | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |   | test_baseline | test_gptv1 | test_gptv2 | test_gptv1v2 |
+|     baseline     |     8.33%     |   37.22%   |   43.75%   |    47.58%    |   |     7.78%     |   37.41%   |   38.80%   |    45.30%    |
+|  gptv1_assisted  |     6.67%     |   23.15%   |   17.97%   |    24.46%    |   |     6.11%     |   22.22%   |   11.72%   |    20.70%    |
+|  gptv2_assisted  |     7.78%     |   39.07%   |    3.65%   |    28.36%    |   |     7.78%     |   36.48%   |    3.65%   |    26.48%    |
+| gptv1v2_assisted |     6.11%     |   22.04%   |    2.86%   |    15.99%    |   |     6.67%     |   22.78%   |    3.12%   |    16.53%    |
+
+|        CB        |  FRR  |   |   XGB  |
+|:----------------:|:-----:|---|:------:|
+|  train_scenario  |  test |   |  test  |
+|     baseline     | 3.15% |   |  4.07% |
+|  gptv1_assisted  | 8.52% |   | 12.59% |
+|  gptv2_assisted  | 2.96% |   |  3.70% |
+| gptv1v2_assisted | 8.70% |   | 12.59% |
+
+
+
+
