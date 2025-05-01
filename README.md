@@ -242,5 +242,29 @@ This repository contains the code and resources for our research on detecting fa
 | CatBoost | `depth` ∈ [4, 10]<br>`learning_rate` ∈ {0.01, 0.1}<br>`iterations` ∈ [50, 500]<br>`l2_leaf_reg` ∈ {1, 5, 9}<br>`border_count` ∈ {32, 128, 254} |
 
 
+## LLM Benchmarking
+
+We provide the GPT-4 prompts used for our zero-shot and few-shot classification experiments:
+
+### Zero-shot Prompt
+You are an AI assistant trained to classify LinkedIn profiles as real or fake. Analyze both textual and numerical features. Respond with only 'Real' or 'Fake'.
+Profile:
+[Profile content here]
+
+### Few-shot Prompt
+You are an AI assistant trained to classify LinkedIn profiles as real or fake. Analyze both textual and numerical features. Here are a few examples:
+Example 1:
+[Example profile content]
+Classification: Real
+Example 2:
+[Example profile content]
+Classification: Fake
+Example 3:
+[Example profile content]
+Classification: Real
+Now classify the following profile:
+[Profile content here]
+
+
 
 
