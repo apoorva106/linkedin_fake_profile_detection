@@ -248,22 +248,22 @@ We provide the GPT-4 prompts used for our zero-shot and few-shot classification 
 
 ### Zero-shot Prompt
 You are an AI assistant trained to classify LinkedIn profiles as real or fake. Analyze both textual and numerical features. Respond with only 'Real' or 'Fake'.
-Profile:
+Profile: <br>
 [Profile content here]
 
 ### Few-shot Prompt
-You are an AI assistant trained to classify LinkedIn profiles as real or fake. Analyze both textual and numerical features. Here are a few examples:
-Example 1:
-[Example profile content]
-Classification: Real
-Example 2:
-[Example profile content]
-Classification: Fake
-Example 3:
-[Example profile content]
-Classification: Real
-Now classify the following profile:
-[Profile content here]
+You are an AI assistant trained to classify LinkedIn profiles as real or fake. Analyze both textual and numerical features. Here are a few examples: <br>
+Example 1: <br>
+[Example profile content] <br>
+Classification: Real <br>
+Example 2: <br>
+[Example profile content] <br>
+Classification: Fake <br>
+Example 3: <br>
+[Example profile content] <br>
+Classification: Real <br>
+Now classify the following profile: <br>
+[Profile content here] <br>
 
 
 
