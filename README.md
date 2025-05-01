@@ -231,4 +231,16 @@ This repository contains the code and resources for our research on detecting fa
 
 
 
+## Hyperparameter ranges
+| Algorithm | Hyperparameters and Ranges |
+|-----------|----------------------------|
+| Random Forest | `n_estimators` ∈ [10, 500]<br>`max_depth` ∈ [5, 50]<br>`min_samples_split` ∈ [2, 20]<br>`min_samples_leaf` ∈ [1, 10] |
+| Logistic Regression | `C` ∈ {0.001, 0.01, 0.1, 1, 10, 100, 1000}<br>`solver` ∈ {lbfgs, liblinear, saga}<br>`max_iter` ∈ {100, 200, 500}<br>`penalty` ∈ {l2, l1, elasticnet} |
+| SVM | `C` ∈ {0.1, 1, 10, 100}<br>`kernel` ∈ {rbf, linear}<br>`gamma` ∈ {scale, auto}<br>`degree` ∈ {2, 3} |
+| KNN | `n_neighbors` ∈ [1, 30]<br>`weights` ∈ {uniform, distance}<br>`algorithm` ∈ {auto, kd_tree}<br>`p` ∈ {1, 2} |
+| XGBoost | `max_depth` ∈ [3, 10]<br>`learning_rate` ∈ {0.01, 0.05, 0.1}<br>`n_estimators` ∈ [50, 500]<br>`subsample` ∈ [0.6, 1.0]<br>`colsample_bytree` ∈ [0.6, 1.0] |
+| CatBoost | `depth` ∈ [4, 10]<br>`learning_rate` ∈ {0.01, 0.1}<br>`iterations` ∈ [50, 500]<br>`l2_leaf_reg` ∈ {1, 5, 9}<br>`border_count` ∈ {32, 128, 254} |
+
+
+
 
