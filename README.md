@@ -55,6 +55,16 @@ This repository contains the code and resources for our research on detecting fa
 * `generated_profiles_NEW.csv`: Additional dataset with 600 profiles generated using GPT-4 Turbo.
    * Created using few-shot prompting with GPT-4
    * Diverse across regions, industries, career stages, and organization types
+
+
+ ## Prompt for generating adversarial profiles
+You are generating diverse LinkedIn profiles. Create profiles that are from different regions (North America, Europe, Asia, Africa, and Latin America, etc) and diverse industries (e.g., tech, healthcare, entertainment, finance, education, retail, manufacturing, arts, law, hospitality, etc.), at different career stages, with different educational backgrounds, working at different types of organizations (startups, corporations, non-profits, etc). <br>
+Here are some example LinkedIn profiles for format reference: <br>
+EXAMPLE 1: <br>
+[Detailed legitimate profile example with all sections] <br>
+EXAMPLE 2: <br>
+[Another legitimate profile example with different industry/background] <br>
+Create a new LinkedIn profile similar to but different from these examples. Use the same format but make the profile unique and realistic.
  
  ## Additional results
 
